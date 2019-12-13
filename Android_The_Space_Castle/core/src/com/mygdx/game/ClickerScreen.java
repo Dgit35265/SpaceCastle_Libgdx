@@ -19,7 +19,6 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 public class ClickerScreen extends ScreenBeta {
     Texture BGTex, GoldTex, CrystalTex, OilTex, MetalTex, AmmoTex, InhabitantTex, FoodTex, ListBGTex;
-    Texture TableTex;
     Image BGImg, GoldImg, CrystalImg, OilImage, MetalImage, AmmoImage, InhabitantImg, FoodImg;
     Label GoldLbl, CrystalLbl, OilLbl, MetalLbl, AmmoLbl, InhabitantLbl, FoodLbl, AutoFoodLbl;
     ImageTextButton SwitchBtn, MoneyBtn, OptBtn;
@@ -88,7 +87,7 @@ public class ClickerScreen extends ScreenBeta {
         FoodLbl = new Label("0", uiSkin);
         AutoFoodLbl = new Label("", uiSkin);
         //Buttons
-        SwitchBtn = new ImageTextButton("SwitchTable", uiSkin);
+        SwitchBtn = new ImageTextButton("Switch", uiSkin);
         MoneyBtn = new ImageTextButton("Get Money!", uiSkin);
         OptBtn = new ImageTextButton("Option", uiSkin);
         //Button for Buy Food
@@ -113,60 +112,54 @@ public class ClickerScreen extends ScreenBeta {
         AutoFoodBar = new ProgressBar(0, AutoFoodTime, 1, false, uiSkin);
         //Resource list
         ResourceTable = new Table();
-        ResourceTable.setSize(WIDTH, 100);
+        ResourceTable.setSize(WIDTH, HEIGHT/12);
         ResourceTable.setPosition(WIDTH/2 - (ResourceTable.getWidth()/2), HEIGHT - ResourceTable.getHeight());
         ResourceTable.setBackground(new TextureRegionDrawable(new TextureRegion(ListBGTex)));
-        ResourceTable.add(GoldImg).maxWidth(100).maxHeight(100).padLeft(100);
+        ResourceTable.add(GoldImg).maxWidth(HEIGHT/12).maxHeight(HEIGHT/12).padLeft(HEIGHT/12);
         ResourceTable.add(GoldLbl).expandX();
-        ResourceTable.add(CrystalImg).maxWidth(100).maxHeight(100);
+        ResourceTable.add(CrystalImg).maxWidth(HEIGHT/12).maxHeight(HEIGHT/12);
         ResourceTable.add(CrystalLbl).expandX();
-        ResourceTable.add(OilImage).maxWidth(100).maxHeight(100);
+        ResourceTable.add(OilImage).maxWidth(HEIGHT/12).maxHeight(HEIGHT/12);
         ResourceTable.add(OilLbl).expandX();
-        ResourceTable.add(MetalImage).maxWidth(100).maxHeight(100);
+        ResourceTable.add(MetalImage).maxWidth(HEIGHT/12).maxHeight(HEIGHT/12);
         ResourceTable.add(MetalLbl).expandX();
-        ResourceTable.add(AmmoImage).maxWidth(100).maxHeight(100);
+        ResourceTable.add(AmmoImage).maxWidth(HEIGHT/12).maxHeight(HEIGHT/12);
         ResourceTable.add(AmmoLbl).expandX();
-        ResourceTable.add(InhabitantImg).maxWidth(100).maxHeight(100);
+        ResourceTable.add(InhabitantImg).maxWidth(HEIGHT/12).maxHeight(HEIGHT/12);
         ResourceTable.add(InhabitantLbl).expandX();
-        ResourceTable.add(FoodImg).maxWidth(100).maxHeight(100);
+        ResourceTable.add(FoodImg).maxWidth(HEIGHT/12).maxHeight(HEIGHT/12);
         ResourceTable.add(FoodLbl).expandX();
         ResourceTable.add(ConsumeBar).expandX();
 
         RefreshResource();
         //Resource Generate Tables
         ResourceGenerateTable = new Table();
-        ResourceGenerateTable.setSize(1400, HEIGHT/2);
+        ResourceGenerateTable.setSize(WIDTH/2, HEIGHT/2);
         ResourceGenerateTable.setPosition(WIDTH/2 - (ResourceGenerateTable.getWidth()/2), HEIGHT/2 - (ResourceGenerateTable.getHeight()/2));
-        //ClickerTable1.setBackground(new TextureRegionDrawable(new TextureRegion(TableTex)));
-        ResourceGenerateTable.add(CrystalUpgradeBtn);
+        ResourceGenerateTable.add(CrystalUpgradeBtn).colspan(2);
         ResourceGenerateTable.row();
-        ResourceGenerateTable.add(CrystalGenerateBtn);
+        ResourceGenerateTable.add(CrystalGenerateBtn).expandX();
+        ResourceGenerateTable.add(CrystalBar).expandX();
         ResourceGenerateTable.row();
-        ResourceGenerateTable.add(CrystalBar);
+        ResourceGenerateTable.add(OilUpgradeBtn).colspan(2);
         ResourceGenerateTable.row();
-        ResourceGenerateTable.add(OilUpgradeBtn);
+        ResourceGenerateTable.add(OilGenerateBtn).expandX();
+        ResourceGenerateTable.add(OilBar).expandX();
         ResourceGenerateTable.row();
-        ResourceGenerateTable.add(OilGenerateBtn);
+        ResourceGenerateTable.add(MetalUpgradeBtn).colspan(2);
         ResourceGenerateTable.row();
-        ResourceGenerateTable.add(OilBar);
+        ResourceGenerateTable.add(MetalGenerateBtn).expandX();
+        ResourceGenerateTable.add(MetalBar).expandX();
         ResourceGenerateTable.row();
-        ResourceGenerateTable.add(MetalUpgradeBtn);
+        ResourceGenerateTable.add(AmmoUpgradeBtn).colspan(2);
         ResourceGenerateTable.row();
-        ResourceGenerateTable.add(MetalGenerateBtn);
+        ResourceGenerateTable.add(AmmoGenerateBtn).expandX();
+        ResourceGenerateTable.add(AmmoBar).expandX();
         ResourceGenerateTable.row();
-        ResourceGenerateTable.add(MetalBar);
+        ResourceGenerateTable.add(AutoFoodUpgradeBtn).colspan(2);
         ResourceGenerateTable.row();
-        ResourceGenerateTable.add(AmmoUpgradeBtn);
-        ResourceGenerateTable.row();
-        ResourceGenerateTable.add(AmmoGenerateBtn);
-        ResourceGenerateTable.row();
-        ResourceGenerateTable.add(AmmoBar);
-        ResourceGenerateTable.row();
-        ResourceGenerateTable.add(AutoFoodUpgradeBtn);
-        ResourceGenerateTable.row();
-        ResourceGenerateTable.add(AutoFoodBar);
-        ResourceGenerateTable.row();
-        ResourceGenerateTable.add(AutoFoodLbl);
+        ResourceGenerateTable.add(AutoFoodBar).expandX();
+        ResourceGenerateTable.add(AutoFoodLbl).expandX();
         //Hide AutoFood at the beginning
         AutoFoodUpgradeBtn.getColor().a = 0;
         AutoFoodBar.getColor().a = 0;
@@ -229,7 +222,7 @@ public class ClickerScreen extends ScreenBeta {
         LeaveBtn = new ImageTextButton("Squad Departure(50ppl)", uiSkin);
         //Prepare Table
         PrepareTable = new Table();
-        PrepareTable.setSize(1400, HEIGHT/2);
+        PrepareTable.setSize(WIDTH/2, HEIGHT/2);
         PrepareTable.setPosition(WIDTH/2, HEIGHT/2 - (PrepareTable.getHeight()/2));
         PrepareTable.add(PrepareLbl).colspan(2);
         PrepareTable.row();
