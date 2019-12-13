@@ -132,6 +132,7 @@ public class ClickerScreen extends ScreenBeta {
         ResourceTable.add(FoodImg).maxWidth(100).maxHeight(100);
         ResourceTable.add(FoodLbl).expandX();
         ResourceTable.add(ConsumeBar).expandX();
+
         RefreshResource();
         //Resource Generate Tables
         ResourceGenerateTable = new Table();
