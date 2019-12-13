@@ -1,4 +1,4 @@
-package com.SpaceCastle.game;
+package com.Alliance.SpaceCastle;
 
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;

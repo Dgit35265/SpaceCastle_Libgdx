@@ -1,12 +1,11 @@
-package com.SpaceCastle.game;
+package com.Alliance.SpaceCastle;
 
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 
 import java.util.LinkedList;
 
-public class TopdownGame1 extends TileMapScreen {
-
+public class TopdownGame2 extends TileMapScreen {
     Label Title;
     TilemapActor tilemap;
     @Override
@@ -14,7 +13,7 @@ public class TopdownGame1 extends TileMapScreen {
         super.initialize();
 
         //PlayBGM();
-        tilemap = new TilemapActor("Map/DungeonMap.tmx", mainStage);
+        tilemap = new TilemapActor("Map/DungeonMap2.tmx", mainStage);
         wall = new LinkedList<Wall>();
         doors = new LinkedList<Door>();
         oils = new LinkedList<Oil>();
@@ -81,7 +80,7 @@ public class TopdownGame1 extends TileMapScreen {
         }
         for(int i = 0; i < doors.size(); i++){
             if(player.overlaps(doors.get(i))){
-               SpaceCastle.setActiveScreen(new TopdownGame2());
+                SpaceCastle.setActiveScreen(new TopdownGame3());
             }
         }
         for(int i = 0; i < oils.size(); i++){

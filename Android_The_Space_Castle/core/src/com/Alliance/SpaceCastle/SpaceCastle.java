@@ -1,4 +1,4 @@
-package com.SpaceCastle.game;
+package com.Alliance.SpaceCastle;
 
 public class SpaceCastle extends GameBeta {
     public static boolean isGame;

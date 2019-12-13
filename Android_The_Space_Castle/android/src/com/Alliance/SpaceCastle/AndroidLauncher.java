@@ -1,4 +1,4 @@
-package com.SpaceCastle.game;
+package com.Alliance.SpaceCastle;
 
 import android.os.Bundle;
 

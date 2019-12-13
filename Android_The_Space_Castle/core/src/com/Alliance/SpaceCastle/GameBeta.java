@@ -1,4 +1,4 @@
-package com.SpaceCastle.game;
+package com.Alliance.SpaceCastle;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;

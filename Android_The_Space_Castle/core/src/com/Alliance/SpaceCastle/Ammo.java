@@ -1,10 +1,10 @@
-package com.SpaceCastle.game;
+package com.Alliance.SpaceCastle;
 
 import com.badlogic.gdx.maps.MapProperties;
 
-public class Oil extends ActorBeta {
-    public Oil(MapProperties props){
-        loadTexture("Oil_Barrel.png");
+public class Ammo extends ActorBeta {
+    public Ammo(MapProperties props){
+        loadTexture("Ammo.png");
         setSize((float)props.get("width"), (float)props.get("height"));
         setPosition((float)props.get("x"), (float)props.get("y"));
         setBoundaryRectangle();
