@@ -49,6 +49,8 @@ public class MainMenu extends ScreenBeta {
         Btns.row();
         Btns.add(CreditBtn).padBottom(50);
 
+        MenuBGM.play();
+
         uiStage.addActor(BGImg);
         uiStage.addActor(Title);
         uiStage.addActor(Btns);
@@ -59,7 +61,7 @@ public class MainMenu extends ScreenBeta {
         if(NewGameBtn.isPressed())
         {
             SpaceCastle.isGame = true;
-            this.dispose();
+            dispose();
             SpaceCastle.setActiveScreen(new ClickerScreen());
             //initialize game here
         }
@@ -75,5 +77,12 @@ public class MainMenu extends ScreenBeta {
         {
             SpaceCastle.setActiveScreen(new CreditScreen());
         }
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        MenuBGM.stop();
+        GameBGM.play();
     }
 }
