@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.SpaceCastle.game;
 
 import android.os.Bundle;
 

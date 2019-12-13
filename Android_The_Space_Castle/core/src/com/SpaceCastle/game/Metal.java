@@ -1,14 +1,13 @@
-package com.mygdx.game;
+package com.SpaceCastle.game;
 
 import com.badlogic.gdx.maps.MapProperties;
 
-public class Crystal extends ActorBeta {
+public class Metal extends ActorBeta {
 
-    public Crystal(MapProperties props){
-        loadTexture("Crystal.png");
+    public Metal(MapProperties props){
+        loadTexture("Iron_Metal.png");
         setSize((float)props.get("width"), (float)props.get("height"));
         setPosition((float)props.get("x"), (float)props.get("y"));
         setBoundaryRectangle();
-
     }
 }

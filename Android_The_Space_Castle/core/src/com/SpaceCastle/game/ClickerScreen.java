@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.SpaceCastle.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
@@ -12,10 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.ProgressBar;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-
-import java.awt.HeadlessException;
-import java.util.List;
-import java.util.concurrent.LinkedBlockingDeque;
 
 public class ClickerScreen extends ScreenBeta {
     Texture BGTex, GoldTex, CrystalTex, OilTex, MetalTex, AmmoTex, InhabitantTex, FoodTex, ListBGTex;

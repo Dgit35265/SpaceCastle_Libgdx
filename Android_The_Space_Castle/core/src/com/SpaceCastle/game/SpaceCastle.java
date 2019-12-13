@@ -1,6 +1,4 @@
-package com.mygdx.game;
-
-import javax.swing.text.html.Option;
+package com.SpaceCastle.game;
 
 public class SpaceCastle extends GameBeta {
     public static boolean isGame;

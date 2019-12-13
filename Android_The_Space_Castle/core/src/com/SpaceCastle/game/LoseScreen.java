@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.SpaceCastle.game;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -7,21 +7,20 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 
-public class WinScreen extends ScreenBeta {
+public class LoseScreen extends ScreenBeta {
     Texture BGTex;
     Image BGImg;
 
     Label Title, Lbl1, Lbl2, Lbl3;
     Table WinTable;
     ImageTextButton BackBtn;
-
     @Override
     public void initialize() {
         //BG
         BGTex = new Texture("MainMenuBG.jpg");
         BGImg = new Image(BGTex);
         //Labels
-        Title = new Label("You Win!", uiSkin);
+        Title = new Label("You Lose!", uiSkin);
         Title.setFontScale(2);
         Title.setSize(WIDTH/6, HEIGHT/6);
         Title.setPosition(WIDTH/2 - (Title.getWidth()/2), HEIGHT/2 + Title.getHeight());
