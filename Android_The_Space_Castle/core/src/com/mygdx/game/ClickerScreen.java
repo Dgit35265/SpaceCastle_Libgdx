@@ -615,12 +615,12 @@ public class ClickerScreen extends ScreenBeta {
     //Win and Lose
     public void Win()
     {
-
+        SpaceCastle.setActiveScreen(new WinScreen());
         dispose();
     }
     public void Lose()
     {
-
+        SpaceCastle.setActiveScreen(new LoseScreen());
         dispose();
     }
 }
