@@ -11,11 +11,6 @@ public class TopdownPlayer extends ActorBeta {
     }
 
     public static AnimState animState;
-
-    int oil;
-    int crystal;
-    int metal;
-    int ammo;
     int health;
 
     TopdownPlayer()
@@ -25,26 +20,21 @@ public class TopdownPlayer extends ActorBeta {
         this.setSize(32, 32);
         this.setScale(1);
         this.setBoundaryRectangle();
-
-        oil = 0;
-        crystal = 0;
-        metal = 0;
-        ammo = 0;
         health = 10;
     }
 
     void setOil(int num)
-    {oil += num;}
+    {SpaceCastle.S_Oil += num;}
 
     void setCrystal(int num)
-    {crystal += num;}
+    {SpaceCastle.S_Crystal += num;}
 
     void setMetal(int num)
-    {metal += num;}
+    {SpaceCastle.S_Metal += num;}
 
     void setAmmo(int num)
-    {ammo += num;}
+    {SpaceCastle.S_Ammo += num;}
 
-    void hit(){health--;}
+    void hit(){SpaceCastle.S_Food--;}
 
 }

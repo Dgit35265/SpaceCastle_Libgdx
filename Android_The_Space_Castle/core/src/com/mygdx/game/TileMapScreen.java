@@ -177,6 +177,8 @@ public class TileMapScreen extends ScreenBeta {
         {
             SquadDead();
         }
+
+        RefreshSquadResource();
     }
 
     @Override
