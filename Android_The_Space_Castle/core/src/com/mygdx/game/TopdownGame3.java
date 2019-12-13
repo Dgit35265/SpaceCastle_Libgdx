@@ -80,7 +80,7 @@ public class TopdownGame3 extends TileMapScreen {
         }
         for(int i = 0; i < doors.size(); i++){
             if(player.overlaps(doors.get(i))){
-                // SpaceCastle.setActiveScreen(new TopdownGame3());
+                SpaceCastle.setActiveScreen(new ClickerScreen());
             }
         }
         for(int i = 0; i < oils.size(); i++){
@@ -88,7 +88,7 @@ public class TopdownGame3 extends TileMapScreen {
                 Oil temp = oils.get(i);
                 oils.remove(i);
                 temp.remove();
-                player.setOil(1);
+                player.setOil(5);
             }
         }
 
@@ -105,7 +105,7 @@ public class TopdownGame3 extends TileMapScreen {
                 Metal temp = metals.get(i);
                 metals.remove(i);
                 temp.remove();
-                player.setMetal(1);
+                player.setMetal(5);
             }
         }
         for(int i = 0; i < ammos.size(); i++){
@@ -113,7 +113,7 @@ public class TopdownGame3 extends TileMapScreen {
                 Ammo temp = ammos.get(i);
                 ammos.remove(i);
                 temp.remove();
-                player.setAmmo(1);
+                player.setAmmo(10);
             }
         }
         for(int i = 0; i < crystals.size(); i++){
@@ -121,9 +121,8 @@ public class TopdownGame3 extends TileMapScreen {
                 Crystal temp = crystals.get(i);
                 crystals.remove(i);
                 temp.remove();
-                player.setCrystal(1);
+                player.setCrystal(3);
             }
         }
-
     }
 }

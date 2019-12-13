@@ -148,23 +148,33 @@ public class TileMapScreen extends ScreenBeta {
 
         if (Up.isPressed() && isReleased)
         {
+            player.animState = TopdownPlayer.AnimState.MOVEUP;
             player.moveBy(0, speed * dt);
             dist += speed * dt;
         }
         if (Down.isPressed() && isReleased)
         {
+            player.animState = TopdownPlayer.AnimState.MOVEDOWN;
             player.moveBy(0, -speed * dt);
             dist += speed * dt;
         }
         if(Left.isPressed() && isReleased)
         {
+            player.animState = TopdownPlayer.AnimState.MOVELEFT;
             player.moveBy(-speed * dt, 0);
             dist += speed * dt;
         }
         if(Right.isPressed() && isReleased)
         {
+            player.animState = TopdownPlayer.AnimState.MOVERIGHT;
             player.moveBy(speed * dt, 0);
             dist += speed * dt;
+        }
+        if(!Gdx.input.isTouched())
+        {
+            isReleased = true;
+            player.animState = TopdownPlayer.AnimState.IDLE;
+            //MoveDirection = 0;
         }
 
         Gdx.app.log("Distance", Float.toString(dist));

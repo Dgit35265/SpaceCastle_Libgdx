@@ -62,7 +62,7 @@ public class TopdownGame2 extends TileMapScreen {
         {
             Trap col = new Trap(obj.getProperties());
             traps.add(col);
-            //mainStage.addActor(col);
+            mainStage.addActor(col);
         }
 
 
@@ -88,7 +88,7 @@ public class TopdownGame2 extends TileMapScreen {
                 Oil temp = oils.get(i);
                 oils.remove(i);
                 temp.remove();
-                player.setOil(1);
+                player.setOil(5);
             }
         }
 
@@ -105,7 +105,7 @@ public class TopdownGame2 extends TileMapScreen {
                 Metal temp = metals.get(i);
                 metals.remove(i);
                 temp.remove();
-                player.setMetal(1);
+                player.setMetal(5);
             }
         }
         for(int i = 0; i < ammos.size(); i++){
@@ -113,7 +113,7 @@ public class TopdownGame2 extends TileMapScreen {
                 Ammo temp = ammos.get(i);
                 ammos.remove(i);
                 temp.remove();
-                player.setAmmo(1);
+                player.setAmmo(10);
             }
         }
         for(int i = 0; i < crystals.size(); i++){
@@ -121,7 +121,7 @@ public class TopdownGame2 extends TileMapScreen {
                 Crystal temp = crystals.get(i);
                 crystals.remove(i);
                 temp.remove();
-                player.setCrystal(1);
+                player.setCrystal(3);
             }
         }
 
