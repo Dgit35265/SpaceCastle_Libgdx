@@ -63,7 +63,7 @@ public abstract class ScreenBeta implements Screen, InputProcessor {
     TextureRegion buttonRegion;
 
     //SOUNDS
-    Music MenuBGM, GameBGM;
+    Music MenuBGM, GameBGM, GameBGM2;
     Sound defaultSoundEffect;
 
     //BOOLEANS
@@ -114,10 +114,13 @@ public abstract class ScreenBeta implements Screen, InputProcessor {
         //Set up BGMs
         MenuBGM = Gdx.audio.newMusic(Gdx.files.internal("Sounds/Menu_BGM.wav"));
         MenuBGM.setLooping(true);
-        MenuBGM.setVolume(0.5f);
+        MenuBGM.setVolume(1.f);
         GameBGM = Gdx.audio.newMusic(Gdx.files.internal("Sounds/Game_BGM.wav"));
         GameBGM.setLooping(true);
-        GameBGM.setVolume(0.5f);
+        GameBGM.setVolume(1.f);
+        GameBGM2 = Gdx.audio.newMusic(Gdx.files.internal("Sounds/TopDownGame_BGM.mp3"));
+        GameBGM2.setLooping(true);
+        GameBGM2.setVolume(1.f);
 
         initialize();
 

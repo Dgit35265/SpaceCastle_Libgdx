@@ -42,7 +42,7 @@ public class TileMapScreen extends ScreenBeta {
         speed = 150;
         distToEat = 750;
 
-        GameBGM.play();
+        GameBGM2.play();
         isReleased = true;
         player = new TopdownPlayer();
         player.setPosition(50,50);
@@ -182,7 +182,7 @@ public class TileMapScreen extends ScreenBeta {
     @Override
     public void dispose() {
         super.dispose();
-        GameBGM.stop();
+        GameBGM2.stop();
     }
 
     public void EndDungeon()
