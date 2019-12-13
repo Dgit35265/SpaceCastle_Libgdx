@@ -10,6 +10,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sun.org.apache.regexp.internal.RESyntaxException;
 
+import java.util.LinkedList;
+
 public class TileMapScreen extends ScreenBeta {
 
     Texture BGTex, GoldTex, CrystalTex, ListBGTex;
@@ -20,20 +22,39 @@ public class TileMapScreen extends ScreenBeta {
     ImageTextButton Btn1, OptBtn;
     Label GoldLbl, CrystalLbl;
 
+
+    //Colliders
+    public LinkedList<Wall> wall;
+    public LinkedList<Door> doors;
+    public LinkedList<Trap> traps;
+    public LinkedList<Ammo> ammos;
+    public LinkedList<Oil> oils;
+    public LinkedList<Crystal> crystals;
+    public LinkedList<Metal> metals;
+
+    boolean isReleased;
+    TopdownPlayer player;
+
+
+
     //GameData
     int Gold;
 
     @Override
     public void initialize() {
+        isReleased = true;
+        player = new TopdownPlayer();
+        player.setPosition(50,50);
+
         //get gold from game database
         Gold = 0;
         //Load Textures
-        BGTex = new Texture("MainMenuBG.jpg");
+        //BGTex = new Texture("MainMenuBG.jpg");
         GoldTex = new Texture("Gold.png");
         CrystalTex = new Texture("Crystal.png");
         ListBGTex = new Texture("resourceListBG.png");
         //Create Images
-        BGImg = new Image(BGTex);
+//        BGImg = new Image(BGTex);
         GoldImg = new Image(GoldTex);
         CrystalImg = new Image(CrystalTex);
         //Buttons
@@ -74,10 +95,15 @@ public class TileMapScreen extends ScreenBeta {
         Btns.add(OptBtn).padLeft(1000);
 
 
-        uiStage.addActor(BGImg);
-        uiStage.addActor(ResourceTable);
+        //uiStage.addActor(BGImg);
+        //uiStage.addActor(ResourceTable);
         uiStage.addActor(DPad);
         uiStage.addActor(Btns);
+
+
+
+
+
     }
 
     @Override
@@ -92,5 +118,14 @@ public class TileMapScreen extends ScreenBeta {
             OptionScreen.isTileMap = false;
             SpaceCastle.setActiveScreen(new ClickerScreen());
         }
+
+        if(Up.isPressed() && isReleased)
+            player.moveBy(0, 150 * dt);
+        if(Down.isPressed() && isReleased)
+            player.moveBy(0, -150 * dt);
+        if(Left.isPressed() && isReleased)
+            player.moveBy(-150 * dt,0 );
+        if(Right.isPressed() && isReleased)
+            player.moveBy(150 * dt,0 );
     }
 }

@@ -417,7 +417,7 @@ public class ClickerScreen extends ScreenBeta {
         }
         if(LeaveBtn.isPressed()) //To Space
         {
-            SpaceCastle.setActiveScreen(new TileMapScreen());
+            SpaceCastle.setActiveScreen(new TopdownGame1());
         }
 
         //Call Generating
