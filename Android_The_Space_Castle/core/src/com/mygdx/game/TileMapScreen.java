@@ -38,12 +38,13 @@ public class TileMapScreen extends ScreenBeta {
 
     @Override
     public void initialize() {
+
+        GameBGM2.play();
         DungeonTime = 100;
         DungeonTimer = DungeonTime;
         speed = 150;
         distToEat = 750;
 
-        GameBGM2.play();
         isReleased = true;
         player = new TopdownPlayer();
         player.setPosition(50,50);
@@ -210,8 +211,8 @@ public class TileMapScreen extends ScreenBeta {
         SpaceCastle.Inhabitant += SpaceCastle.S_Inhabitant;
         SpaceCastle.Food += SpaceCastle.S_Food;
 
-        SpaceCastle.setActiveScreen(new ClickerScreen());
         dispose();
+        SpaceCastle.setActiveScreen(new ClickerScreen());
     }
     public void EndDungeonEarly()
     {

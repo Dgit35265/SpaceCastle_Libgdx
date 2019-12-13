@@ -130,8 +130,6 @@ public class ClickerScreen extends ScreenBeta {
         ResourceTable.add(FoodImg).maxWidth(HEIGHT/12).maxHeight(HEIGHT/12);
         ResourceTable.add(FoodLbl).expandX();
         ResourceTable.add(ConsumeBar).expandX();
-
-        RefreshResource();
         //Resource Generate Tables
         ResourceGenerateTable = new Table();
         ResourceGenerateTable.setSize(WIDTH/2, HEIGHT/2);
@@ -257,6 +255,8 @@ public class ClickerScreen extends ScreenBeta {
         uiStage.addActor(ResourceGenerateTable);
         uiStage.addActor(PrepareTable);
         uiStage.addActor(Btns);
+
+        RefreshResource();
     }
 
     @Override
@@ -294,7 +294,7 @@ public class ClickerScreen extends ScreenBeta {
         //Prevent Click Btn in frames
         if(!MoneyBtn.isPressed() && !SwitchBtn.isPressed() && !CrystalUpgradeBtn.isPressed() && !OilUpgradeBtn.isPressed()
                 && !MetalUpgradeBtn.isPressed() && !AmmoUpgradeBtn.isPressed() && !BuyFoodBtn.isPressed()
-                && !AutoFoodUpgradeBtn.isPressed() && !isReleased)
+                && !AutoFoodUpgradeBtn.isPressed() && !LeaveBtn.isPressed() && !isReleased)
             isReleased = true;
 
         if(OptBtn.isPressed())
@@ -453,14 +453,20 @@ public class ClickerScreen extends ScreenBeta {
             }
             isReleased = false;
         }
-        if(LeaveBtn.isPressed()) //To Space
+        if(LeaveBtn.isPressed() && isReleased) //To Space
         {
-            SpaceCastle.S_Inhabitant = 50;
-            SpaceCastle.Ammo -= SpaceCastle.S_Ammo;
-            SpaceCastle.Inhabitant -= SpaceCastle.S_Inhabitant;
-            SpaceCastle.Food -= SpaceCastle.S_Food;
-            SpaceCastle.setActiveScreen(new TopdownGame1());
-            dispose();
+            if(SpaceCastle.S_Food > 0)
+            {
+                SpaceCastle.S_Inhabitant = 50;
+                SpaceCastle.Ammo -= SpaceCastle.S_Ammo;
+                SpaceCastle.Inhabitant -= SpaceCastle.S_Inhabitant;
+                SpaceCastle.Food -= SpaceCastle.S_Food;
+                SpaceCastle.setActiveScreen(new TopdownGame1());
+                dispose();
+            }
+            else
+                FoodTakenNumLbl .setText("You need to take at least 1 food!");
+            isReleased = false;
         }
 
         //Call Generating
@@ -611,12 +617,12 @@ public class ClickerScreen extends ScreenBeta {
     //Win and Lose
     public void Win()
     {
-        SpaceCastle.setActiveScreen(new WinScreen());
         dispose();
+        SpaceCastle.setActiveScreen(new WinScreen());
     }
     public void Lose()
     {
-        SpaceCastle.setActiveScreen(new LoseScreen());
         dispose();
+        SpaceCastle.setActiveScreen(new LoseScreen());
     }
 }

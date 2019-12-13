@@ -74,14 +74,17 @@ public class MainMenu extends ScreenBeta {
         if(HowToPlayBtn.isPressed())
         {
             SpaceCastle.setActiveScreen(new HowToPlayScreen());
+            dispose();
         }
         if(OptionBtn.isPressed())
         {
             SpaceCastle.setActiveScreen(new OptionScreen());
+            dispose();
         }
         if(CreditBtn.isPressed())
         {
             SpaceCastle.setActiveScreen(new CreditScreen());
+            dispose();
         }
     }
 
