@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="left-up" compressionlevel="-1" width="32" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="42">
+ <tileset firstgid="1" source="DungeonTile.tsx"/>
+ <layer id="1" name="Background" width="32" height="16">
+  <data encoding="base64">
+   CwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAA=
+  </data>
+ </layer>
+ <layer id="2" name="Tiles" width="32" height="16">
+  <data encoding="base64">
+   AQAAAAIAAAACAAAADQAAAA4AAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAQAAgAEAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAABAACAAQAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAEAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACgAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA4AIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAACgAQAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAwAAQAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACgAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAKABAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAADAAAAAAAAAAAAAAACAACgAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA4AIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAADgAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACgAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAOABAABAAwAAQAAAAAAAAAAAAwAAwAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEABAADAAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA4AEAAAADAAAAAAAAAAAAAAADAACAAQAAgAEAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAEAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAEAAGACAABAAwAAQAAAAAAAAAAAAwAAwAIAAEABAADAAgAAYAAAAAAAAAAAAAAAAAAAAAADAACAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACgAQAAAAIAAAADAAAAAAAAAAAAAAADAACAAgAAAAEAAIACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACgAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAKADAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA4AIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAADgAgAAYAAAAAAAAAAAAAAAAAAAAAADAADAAwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAgAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAOACAABgAAAAAAAAAAAAAAAAAAAAAAIAAOACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAMADAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA4AIAAGAAAAAAAAAAAAAAAAAAAAAAAgAA4AIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAADgAQAAYAIAAMACAADAAgAAwAIAAMABAADgAQAAYAIAAMACAADAAgAAwAIAAMACAADAAgAAwAIAAMACAADAAgAAwAIAAMACAADAAgAAwAIAAMACAADAAgAAwAIAAMABAADgAQAAYAIAAMACAADAAgAAwAIAAMACAADAAgAAwAEAAMA=
+  </data>
+ </layer>
+ <objectgroup id="3" name="Objects">
+  <object id="1" name="ammo" x="864" y="128" width="32" height="32">
+   <properties>
+    <property name="name" value="ammo"/>
+   </properties>
+  </object>
+  <object id="2" name="oil" x="896" y="256" width="32" height="32">
+   <properties>
+    <property name="name" value="oil"/>
+   </properties>
+  </object>
+  <object id="4" name="trap" x="864" y="384" width="32" height="32">
+   <properties>
+    <property name="name" value="trap"/>
+   </properties>
+  </object>
+  <object id="6" name="metal" x="640" y="384" width="32" height="32">
+   <properties>
+    <property name="name" value="metal"/>
+   </properties>
+  </object>
+  <object id="7" name="ammo" x="672" y="288" width="32" height="32">
+   <properties>
+    <property name="name" value="ammo"/>
+   </properties>
+  </object>
+  <object id="9" name="oil" x="608" y="192" width="32" height="32">
+   <properties>
+    <property name="name" value="oil"/>
+   </properties>
+  </object>
+  <object id="10" name="trap" x="672" y="128" width="32" height="32">
+   <properties>
+    <property name="name" value="trap"/>
+   </properties>
+  </object>
+  <object id="11" name="crystal" x="576" y="64" width="32" height="32">
+   <properties>
+    <property name="name" value="crystal"/>
+   </properties>
+  </object>
+  <object id="12" name="oil" x="512" y="448" width="32" height="32">
+   <properties>
+    <property name="name" value="oil"/>
+   </properties>
+  </object>
+  <object id="13" name="ammo" x="384" y="384" width="32" height="32">
+   <properties>
+    <property name="name" value="ammo"/>
+   </properties>
+  </object>
+  <object id="14" name="metal" x="352" y="320" width="32" height="32">
+   <properties>
+    <property name="name" value="metal"/>
+   </properties>
+  </object>
+  <object id="15" name="oil" x="256" y="352" width="32" height="32">
+   <properties>
+    <property name="name" value="oil"/>
+   </properties>
+  </object>
+  <object id="16" name="trap" x="128" y="352" width="32" height="32">
+   <properties>
+    <property name="name" value="trap"/>
+   </properties>
+  </object>
+  <object id="17" name="crystal" x="64" y="416" width="32" height="32">
+   <properties>
+    <property name="name" value="crystal"/>
+   </properties>
+  </object>
+  <object id="18" name="metal" x="96" y="288" width="32" height="32">
+   <properties>
+    <property name="name" value="metal"/>
+   </properties>
+  </object>
+  <object id="19" name="oil" x="96" y="192" width="32" height="32">
+   <properties>
+    <property name="name" value="oil"/>
+   </properties>
+  </object>
+  <object id="20" name="trap" x="256" y="160" width="32" height="32">
+   <properties>
+    <property name="name" value="trap"/>
+   </properties>
+  </object>
+  <object id="21" name="metal" x="448" y="160" width="32" height="32">
+   <properties>
+    <property name="name" value="metal"/>
+   </properties>
+  </object>
+  <object id="22" name="trap" x="416" y="64" width="32" height="32">
+   <properties>
+    <property name="name" value="trap"/>
+   </properties>
+  </object>
+  <object id="23" name="ammo" x="256" y="32" width="32" height="32">
+   <properties>
+    <property name="name" value="ammo"/>
+   </properties>
+  </object>
+  <object id="24" name="oil" x="32" y="64" width="32" height="32">
+   <properties>
+    <property name="name" value="oil"/>
+   </properties>
+  </object>
+  <object id="25" name="exit" x="96" y="0" width="64" height="32">
+   <properties>
+    <property name="name" value="door"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="Walls">
+  <object id="26" x="0" y="0" width="96" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="27" x="0" y="32" width="32" height="480">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="28" x="32" y="96" width="384" height="64">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="29" x="32" y="224" width="32" height="64">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="30" x="128" y="224" width="352" height="64">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="31" x="160" y="288" width="64" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="32" x="160" y="384" width="64" height="96">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="33" x="32" y="480" width="960" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="34" x="992" y="0" width="32" height="512">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="35" x="160" y="0" width="832" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="37" x="480" y="32" width="64" height="384">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="38" x="736" y="32" width="64" height="320">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="39" x="800" y="256" width="64" height="64">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="40" x="928" y="256" width="64" height="64">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="41" x="736" y="416" width="64" height="64">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

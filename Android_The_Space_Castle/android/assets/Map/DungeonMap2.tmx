@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="left-up" compressionlevel="-1" width="32" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="38">
+ <tileset firstgid="1" source="DungeonTile.tsx"/>
+ <layer id="1" name="Background" width="32" height="16">
+  <data encoding="base64">
+   CwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAAAAsAAAA=
+  </data>
+ </layer>
+ <layer id="2" name="Tiles" width="32" height="16">
+  <data encoding="base64">
+   AQAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAABAACgAQAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAEAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAKADAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAADgAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAOACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAOADAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAEAAGACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAQAAwAEAAGACAABAAgAAQAIAAEACAABAAgAAQAMAAGAAAAAAAAAAAAMAAMACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEABAADAAQAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAwAAAAAAAAAAAAAAAwAAoAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAEAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACgAQAAYAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEACAABAAgAAQAIAAEADAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAKABAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAABAACgAQAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAQAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAKADAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAACgAwAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACgAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAKACAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAoAIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAOADAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAADgAwAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACgAQAAYAIAAMACAABADQAAQA4AAEACAADAAgAAwAIAAMACAADAAQAA4AEAAGACAADAAgAAwAIAAMACAADAAgAAwAIAAMACAADAAgAAwAIAAMACAADAAgAAwAEAAMABAABgAgAAwAIAAMACAADAAgAAwAIAAMACAADAAgAAwAEAAMA=
+  </data>
+ </layer>
+ <objectgroup id="3" name="Objects">
+  <object id="1" name="metal" x="224" y="384" width="32" height="32">
+   <properties>
+    <property name="name" value="metal"/>
+   </properties>
+  </object>
+  <object id="2" name="ammo" x="416" y="384" width="32" height="32">
+   <properties>
+    <property name="name" value="ammo"/>
+   </properties>
+  </object>
+  <object id="3" name="oil" x="576" y="448" width="32" height="32">
+   <properties>
+    <property name="name" value="oil"/>
+   </properties>
+  </object>
+  <object id="4" name="trap" x="640" y="384" width="32" height="32">
+   <properties>
+    <property name="name" value="trap"/>
+   </properties>
+  </object>
+  <object id="5" name="crystal" x="832" y="352" width="32" height="32">
+   <properties>
+    <property name="name" value="crystal"/>
+   </properties>
+  </object>
+  <object id="6" name="metal" x="928" y="448" width="32" height="32">
+   <properties>
+    <property name="name" value="metal"/>
+   </properties>
+  </object>
+  <object id="7" name="oil" x="928" y="256" width="32" height="32">
+   <properties>
+    <property name="name" value="oil"/>
+   </properties>
+  </object>
+  <object id="9" name="trap" x="640" y="224" width="32" height="32">
+   <properties>
+    <property name="name" value="trap"/>
+   </properties>
+  </object>
+  <object id="10" name="metal" x="448" y="256" width="32" height="32">
+   <properties>
+    <property name="name" value="metal"/>
+   </properties>
+  </object>
+  <object id="11" name="ammo" x="320" y="224" width="32" height="32">
+   <properties>
+    <property name="name" value="ammo"/>
+   </properties>
+  </object>
+  <object id="12" name="crystal" x="96" y="256" width="32" height="32">
+   <properties>
+    <property name="name" value="crystal"/>
+   </properties>
+  </object>
+  <object id="13" name="metal" x="160" y="64" width="32" height="32">
+   <properties>
+    <property name="name" value="metal"/>
+   </properties>
+  </object>
+  <object id="14" name="ammo" x="288" y="128" width="32" height="32">
+   <properties>
+    <property name="name" value="ammo"/>
+   </properties>
+  </object>
+  <object id="15" name="crystal" x="64" y="96" width="32" height="32">
+   <properties>
+    <property name="name" value="crystal"/>
+   </properties>
+  </object>
+  <object id="16" name="metal" x="480" y="64" width="32" height="32">
+   <properties>
+    <property name="name" value="metal"/>
+   </properties>
+  </object>
+  <object id="17" name="oil" x="672" y="64" width="32" height="32">
+   <properties>
+    <property name="name" value="oil"/>
+   </properties>
+  </object>
+  <object id="18" name="trap" x="864" y="96" width="32" height="32">
+   <properties>
+    <property name="name" value="trap"/>
+   </properties>
+  </object>
+  <object id="19" name="exit" x="992" y="64" width="32" height="64">
+   <properties>
+    <property name="name" value="door"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="Wall">
+  <object id="21" x="0" y="0" width="1024" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="22" x="0" y="32" width="32" height="480">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="25" x="32" y="480" width="992" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="26" x="992" y="128" width="32" height="352">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="27" x="672" y="160" width="320" height="64">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="28" x="32" y="160" width="576" height="64">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="29" x="352" y="128" width="64" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="30" x="352" y="32" width="64" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="31" x="32" y="288" width="736" height="64">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="32" x="704" y="352" width="64" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="33" x="704" y="448" width="64" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="34" x="288" y="352" width="64" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="35" x="288" y="448" width="64" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+  <object id="36" x="992" y="32" width="32" height="32">
+   <properties>
+    <property name="name" value="wall"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
