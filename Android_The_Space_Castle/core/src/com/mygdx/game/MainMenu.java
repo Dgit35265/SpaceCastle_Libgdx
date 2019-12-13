@@ -15,7 +15,7 @@ public class MainMenu extends ScreenBeta {
 
     Table Btns;
     Label Title;
-    ImageTextButton NewGameBtn, LoadGameBtn, OptionBtn, CreditBtn;
+    ImageTextButton StartGameBtn, LoadGameBtn, HowToPlayBtn, OptionBtn, CreditBtn;
 
 
     @Override
@@ -32,8 +32,9 @@ public class MainMenu extends ScreenBeta {
         Title.setPosition(WIDTH/2 - (Title.getWidth()/2), HEIGHT/2 + Title.getHeight());
         Title.setAlignment(Align.center);
         //Buttons
-        NewGameBtn = new ImageTextButton("New Game", uiSkin);
-        LoadGameBtn = new ImageTextButton("Load Game", uiSkin);
+        StartGameBtn = new ImageTextButton("Start Game", uiSkin);
+        //LoadGameBtn = new ImageTextButton("Load Game", uiSkin);
+        HowToPlayBtn = new ImageTextButton("How To Play", uiSkin);
         OptionBtn = new ImageTextButton("Option", uiSkin);
         CreditBtn = new ImageTextButton("Credit", uiSkin);
 
@@ -41,9 +42,10 @@ public class MainMenu extends ScreenBeta {
         Btns = new Table();
         Btns.setSize(1000, 600);
         Btns.setPosition(WIDTH/2 - (Btns.getWidth()/2), HEIGHT/2 - (Btns.getHeight()/2) - 150);
-        Btns.add(NewGameBtn).padBottom(50);
+        Btns.add(StartGameBtn).padBottom(50);
         Btns.row();
-        Btns.add(LoadGameBtn).padBottom(50);
+        //Btns.add(LoadGameBtn).padBottom(50);
+        Btns.add(HowToPlayBtn).padBottom(50);
         Btns.row();
         Btns.add(OptionBtn).padBottom(50);
         Btns.row();
@@ -58,16 +60,20 @@ public class MainMenu extends ScreenBeta {
 
     @Override
     public void update(float dt) {
-        if(NewGameBtn.isPressed())
+        if(StartGameBtn.isPressed())
         {
             SpaceCastle.isGame = true;
             dispose();
             SpaceCastle.setActiveScreen(new ClickerScreen());
             //initialize game here
         }
-        if(LoadGameBtn.isPressed())
+        /*if(LoadGameBtn.isPressed())
         {
             SpaceCastle.setActiveScreen(new LoadScreen());
+        }*/
+        if(HowToPlayBtn.isPressed())
+        {
+            SpaceCastle.setActiveScreen(new HowToPlayScreen());
         }
         if(OptionBtn.isPressed())
         {

@@ -13,10 +13,9 @@ public class OptionScreen extends ScreenBeta {
     Texture BGTex;
     Image BGImg;
 
-    Table Btns, Sliders;
+    Table Btns;
 
-    ImageTextButton Opt1, Opt2, Opt3, BackBtn, ResumeBtn;
-    Slider Volume, Brightness;
+    ImageTextButton EasyBtn, NormalBtn, HardBtn, BackBtn, ResumeBtn;
     Label Title, VolumeL, BrightnessL;
 
     boolean isSetResume;
@@ -29,14 +28,11 @@ public class OptionScreen extends ScreenBeta {
         BGTex = new Texture("MainMenuBG.jpg");
         BGImg = new Image(BGTex);
         //Buttons
-        Opt1 = new ImageTextButton("Option1", uiSkin);
-        Opt2 = new ImageTextButton("Option2", uiSkin);
-        Opt3 = new ImageTextButton("Option3", uiSkin);
+        EasyBtn = new ImageTextButton("Easy", uiSkin);
+        NormalBtn = new ImageTextButton("Normal", uiSkin);
+        HardBtn = new ImageTextButton("Hard", uiSkin);
         BackBtn = new ImageTextButton("Back to Menu", uiSkin);
         ResumeBtn = new ImageTextButton("Resume", uiSkin);
-        //Sliders
-        Volume = new Slider(0, 5, 1, false, uiSkin);
-        Brightness = new Slider(0, 5, 1, false, uiSkin);
         //Title
         Title = new Label("Option", uiSkin);
         //Labels
@@ -48,26 +44,16 @@ public class OptionScreen extends ScreenBeta {
         Btns.setPosition(WIDTH/2 - (Btns.getWidth()/2), HEIGHT/2 - (Btns.getHeight()/2));
         Btns.add(Title).colspan(2).padBottom(100);
         Btns.row();
-        Btns.add(Opt1).padBottom(100);
+        Btns.add(EasyBtn).padBottom(100);
         Btns.row();
-        Btns.add(Opt2).padBottom(100);
+        Btns.add(NormalBtn).padBottom(100);
         Btns.row();
-        Btns.add(Opt3).padBottom(100);
+        Btns.add(HardBtn).padBottom(100);
         Btns.row();
         Btns.add(BackBtn).padTop(400);
 
-        Sliders = new Table();
-        Sliders.setSize(2000, 400);
-        Sliders.setPosition(WIDTH/2 - (Sliders.getWidth()/2), 300);
-        Sliders.add(VolumeL).padRight(400);
-        Sliders.add(BrightnessL);
-        Sliders.row();
-        Sliders.add(Volume).padRight(400);
-        Sliders.add(Brightness);
-
         uiStage.addActor(BGImg);
         uiStage.addActor(Btns);
-        uiStage.addActor(Sliders);
     }
 
     @Override
@@ -80,6 +66,19 @@ public class OptionScreen extends ScreenBeta {
             SpaceCastle.setActiveScreen(new MainMenu());
             GameBGM.stop();
         }
+        //Choose Difficulty when not in game
+        if(!SpaceCastle.isGame) {
+            if (EasyBtn.isPressed()) {
+                SpaceCastle.LoadDifficulty(1);
+            }
+            if (NormalBtn.isPressed()) {
+                SpaceCastle.LoadDifficulty(2);
+            }
+            if (HardBtn.isPressed()) {
+                SpaceCastle.LoadDifficulty(3);
+            }
+        }
+
         if(SpaceCastle.isGame && !isSetResume)
         {
             //add resume button
