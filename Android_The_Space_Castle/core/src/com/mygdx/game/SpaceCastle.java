@@ -11,6 +11,12 @@ public class SpaceCastle extends GameBeta {
 
     public static int AutoFoodNum;
 
+    //Squad Resource
+    public static int S_Gold, S_Crystal, S_Oil, S_Metal, S_Ammo, S_Inhabitant, S_Food;
+
+    //Total Time
+    public static int TotalTime;
+
     //Win Condition
     public static int WinInhabitants;
 

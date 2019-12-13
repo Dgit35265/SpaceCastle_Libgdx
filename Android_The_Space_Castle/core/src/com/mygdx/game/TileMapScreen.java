@@ -108,6 +108,7 @@ public class TileMapScreen extends ScreenBeta {
 
     @Override
     public void update(float dt) {
+        SpaceCastle.TotalTime += dt;
         if(OptBtn.isPressed())
         {
             OptionScreen.isTileMap = true;

@@ -63,8 +63,9 @@ public class MainMenu extends ScreenBeta {
         if(StartGameBtn.isPressed())
         {
             SpaceCastle.isGame = true;
-            dispose();
+            SpaceCastle.TotalTime = 0;
             SpaceCastle.setActiveScreen(new ClickerScreen());
+            dispose();
             //initialize game here
         }
         /*if(LoadGameBtn.isPressed())

@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.ProgressBar;
+import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.sun.org.apache.regexp.internal.RESyntaxException;
@@ -26,7 +27,6 @@ public class ClickerScreen extends ScreenBeta {
     ImageTextButton CrystalUpgradeBtn, OilUpgradeBtn, MetalUpgradeBtn, AmmoUpgradeBtn, AutoFoodUpgradeBtn;
     ImageTextButton CrystalGenerateBtn, OilGenerateBtn, MetalGenerateBtn, AmmoGenerateBtn;
     ImageTextButton BuyFoodBtn;
-    ImageTextButton LeaveBtn;
 
     //Progress bars for resource generate
     ProgressBar CrystalBar, OilBar, MetalBar, AmmoBar, ConsumeBar, AutoFoodBar;
@@ -35,6 +35,9 @@ public class ClickerScreen extends ScreenBeta {
 
     Table ResourceTable, ResourceGenerateTable, PrepareTable, Btns;
 
+    Label AmmoTakenLbl, AmmoTakenNumLbl, FoodTakenLbl, FoodTakenNumLbl;
+    Slider AmmoTakenSlider, FoodTakenSlider;
+    ImageTextButton LeaveBtn;
     //SFXs
     Sound GoldSFX, CompleteSFX, UpgradeSFX;
 
@@ -245,6 +248,16 @@ public class ClickerScreen extends ScreenBeta {
 
     @Override
     public void update(float dt) {
+        SpaceCastle.TotalTime += dt;
+        //Check Win and Lose Condition
+        if(SpaceCastle.Inhabitant >= SpaceCastle.WinInhabitants)
+        {
+            Win();
+        }
+        if(SpaceCastle.Inhabitant <= 0)
+        {
+            Lose();
+        }
         //Gdx.app.log("TableY: ", Float.toString(WIDTH/2 - (ClickerTable1.getWidth()/2)));
         if(MoneyBtn.isPressed() && isReleased)
         {
@@ -548,10 +561,6 @@ public class ClickerScreen extends ScreenBeta {
         {
             SpaceCastle.Inhabitant += 50;
             SpaceCastle.Food -= FoodNeed;
-            if(SpaceCastle.Inhabitant >= SpaceCastle.WinInhabitants)
-            {
-                //Win Game!
-            }
         }
         else // Not Enough Food
         {
@@ -560,10 +569,6 @@ public class ClickerScreen extends ScreenBeta {
             Gdx.app.log("reduce", Integer.toString(50*(SpaceCastle.Inhabitant/50 - SpaceCastle.Food)));
             SpaceCastle.Inhabitant -= 50*(SpaceCastle.Inhabitant/50 - SpaceCastle.Food);
             SpaceCastle.Food = 0;
-            if(SpaceCastle.Inhabitant <= 0)
-            {
-                //Lose Game!
-            }
         }
         RefreshResource();
     }
@@ -571,5 +576,16 @@ public class ClickerScreen extends ScreenBeta {
     {
         SpaceCastle.Food += SpaceCastle.AutoFoodNum;
         RefreshResource();
+    }
+    //Win and Lose
+    public void Win()
+    {
+
+        dispose();
+    }
+    public void Lose()
+    {
+
+        dispose();
     }
 }
