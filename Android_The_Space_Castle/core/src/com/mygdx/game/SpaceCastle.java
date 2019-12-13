@@ -34,6 +34,14 @@ public class SpaceCastle extends GameBeta {
         Inhabitant = 50;
         Food = 10;
         AutoFoodNum = 0;
+        //test squad resource
+        S_Gold = 0;
+        S_Crystal = 0;
+        S_Oil = 0;
+        S_Metal = 0;
+        S_Ammo = 0;
+        S_Inhabitant = 0;
+        S_Food = 0;
 
         //Init Win Condition
         WinInhabitants = 2000; //set 2000 for test

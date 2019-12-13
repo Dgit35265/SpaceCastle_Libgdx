@@ -35,7 +35,7 @@ public class ClickerScreen extends ScreenBeta {
 
     Table ResourceTable, ResourceGenerateTable, PrepareTable, Btns;
 
-    Label AmmoTakenLbl, AmmoTakenNumLbl, FoodTakenLbl, FoodTakenNumLbl;
+    Label PrepareLbl, AmmoTakenLbl, AmmoTakenNumLbl, FoodTakenLbl, FoodTakenNumLbl;
     Slider AmmoTakenSlider, FoodTakenSlider;
     ImageTextButton LeaveBtn;
     //SFXs
@@ -91,7 +91,6 @@ public class ClickerScreen extends ScreenBeta {
         SwitchBtn = new ImageTextButton("SwitchTable", uiSkin);
         MoneyBtn = new ImageTextButton("Get Money!", uiSkin);
         OptBtn = new ImageTextButton("Option", uiSkin);
-        LeaveBtn = new ImageTextButton("To Space", uiSkin);
         //Button for Buy Food
         BuyFoodBtn = new ImageTextButton("Purchase Food(10G)", uiSkin);
         //Button for Upgrade Resource Generator
@@ -112,7 +111,6 @@ public class ClickerScreen extends ScreenBeta {
         AmmoBar = new ProgressBar(0, AmmoTime, 1, false, uiSkin);
         ConsumeBar = new ProgressBar(0, FoodConsumeTime, 1, false, uiSkin);
         AutoFoodBar = new ProgressBar(0, AutoFoodTime, 1, false, uiSkin);
-
         //Resource list
         ResourceTable = new Table();
         ResourceTable.setSize(WIDTH, 100);
@@ -217,12 +215,33 @@ public class ClickerScreen extends ScreenBeta {
             AmmoGenerateBtn.getColor().a = 0;
             AmmoBar.getColor().a = 0;
         }
-
+        //Labels
+        PrepareLbl = new Label("Prepare to Dungeon...", uiSkin);
+        AmmoTakenLbl = new Label("Ammo Carried", uiSkin);
+        AmmoTakenNumLbl = new Label("0", uiSkin);
+        FoodTakenLbl = new Label("Food Carried", uiSkin);
+        FoodTakenNumLbl = new Label("0", uiSkin);
+        //Sliders
+        AmmoTakenSlider = new Slider(0, SpaceCastle.Ammo, 1, false, uiSkin);
+        FoodTakenSlider = new Slider(0, SpaceCastle.Food, 1, false, uiSkin);
+        //Buttons
+        LeaveBtn = new ImageTextButton("Squad Departure(50ppl)", uiSkin);
         //Prepare Table
         PrepareTable = new Table();
-        PrepareTable.setSize(1400, HEIGHT/8);
-        PrepareTable.setPosition(WIDTH/2, HEIGHT - (PrepareTable.getHeight()* 3));
-        PrepareTable.add(LeaveBtn);
+        PrepareTable.setSize(1400, HEIGHT/2);
+        PrepareTable.setPosition(WIDTH/2, HEIGHT/2 - (PrepareTable.getHeight()/2));
+        PrepareTable.add(PrepareLbl).colspan(2);
+        PrepareTable.row();
+        PrepareTable.add(AmmoTakenLbl).padTop(HEIGHT/10).expandX();
+        PrepareTable.add(FoodTakenLbl).padTop(HEIGHT/10).expandX();
+        PrepareTable.row();
+        PrepareTable.add(AmmoTakenSlider).padTop(HEIGHT/10).expandX();
+        PrepareTable.add(FoodTakenSlider).padTop(HEIGHT/10).expandX();
+        PrepareTable.row();
+        PrepareTable.add(AmmoTakenNumLbl).padTop(HEIGHT/10).expandX();
+        PrepareTable.add(FoodTakenNumLbl).padTop(HEIGHT/10).expandX();
+        PrepareTable.row();
+        PrepareTable.add(LeaveBtn).colspan(2);
         PrepareTable.getColor().a = 0;
 
         //Buttons Table
@@ -258,7 +277,18 @@ public class ClickerScreen extends ScreenBeta {
         {
             Lose();
         }
-        //Gdx.app.log("TableY: ", Float.toString(WIDTH/2 - (ClickerTable1.getWidth()/2)));
+        //Check if Slider Dragging
+        if(AmmoTakenSlider.isDragging())
+        {
+            SpaceCastle.S_Ammo = (int)AmmoTakenSlider.getValue();
+            AmmoTakenNumLbl.setText(SpaceCastle.S_Ammo);
+        }
+        if(FoodTakenSlider.isDragging())
+        {
+            SpaceCastle.S_Food = (int)FoodTakenSlider.getValue();
+            FoodTakenNumLbl.setText(SpaceCastle.S_Food);
+        }
+        //Button Pressed
         if(MoneyBtn.isPressed() && isReleased)
         {
             SpaceCastle.Gold++;
@@ -430,7 +460,12 @@ public class ClickerScreen extends ScreenBeta {
         }
         if(LeaveBtn.isPressed()) //To Space
         {
+            SpaceCastle.S_Inhabitant = 50;
+            SpaceCastle.Ammo -= SpaceCastle.S_Ammo;
+            SpaceCastle.Inhabitant -= SpaceCastle.S_Inhabitant;
+            SpaceCastle.Food -= SpaceCastle.S_Food;
             SpaceCastle.setActiveScreen(new TopdownGame1());
+            dispose();
         }
 
         //Call Generating
