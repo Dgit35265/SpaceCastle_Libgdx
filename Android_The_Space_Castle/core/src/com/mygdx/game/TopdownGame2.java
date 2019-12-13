@@ -62,7 +62,7 @@ public class TopdownGame2 extends TileMapScreen {
         {
             Trap col = new Trap(obj.getProperties());
             traps.add(col);
-            mainStage.addActor(col);
+            //mainStage.addActor(col);
         }
 
 

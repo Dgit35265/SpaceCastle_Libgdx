@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import java.util.LinkedList;
 
@@ -64,11 +65,13 @@ public class TileMapScreen extends ScreenBeta {
         InhabitantImg = new Image(InhabitantTex);
         FoodImg = new Image(FoodTex);
         //Buttons
-        Up = new Button(uiSkin);
-        Down = new Button(uiSkin);
-        Left = new Button(uiSkin);
-        Right = new Button(uiSkin);
+
         BackBtn = new ImageTextButton("Go Back to SpaceCastle(Lose All Food)", uiSkin); //this should be another function
+        Up = new Button(new TextureRegionDrawable(new Texture("flatDark25.png")));
+        Down = new Button(new TextureRegionDrawable(new Texture("flatDark26.png")));
+        Left = new Button(new TextureRegionDrawable(new Texture("flatDark23.png")));
+        Right = new Button(new TextureRegionDrawable(new Texture("flatDark24.png")));
+
         OptBtn = new ImageTextButton("Option", uiSkin);
         //Labels
         GoldLbl = new Label(Integer.toString(SpaceCastle.S_Gold), uiSkin);
@@ -177,6 +180,8 @@ public class TileMapScreen extends ScreenBeta {
         {
             SquadDead();
         }
+
+        RefreshSquadResource();
     }
 
     @Override
