@@ -28,6 +28,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
+import java.awt.Menu;
+
 
 /**
  * Created by markapptist on 2018-10-16.
@@ -61,7 +63,7 @@ public abstract class ScreenBeta implements Screen, InputProcessor {
     TextureRegion buttonRegion;
 
     //SOUNDS
-    Music defaultBackgroundMusic;
+    Music MenuBGM, GameBGM;
     Sound defaultSoundEffect;
 
     //BOOLEANS
@@ -108,6 +110,14 @@ public abstract class ScreenBeta implements Screen, InputProcessor {
         uiTable.padTop(30);
         uiTable.add(button).padBottom(100);
         uiTable.row();
+
+        //Set up BGMs
+        MenuBGM = Gdx.audio.newMusic(Gdx.files.internal("Sounds/Menu_BGM.wav"));
+        MenuBGM.setLooping(true);
+        MenuBGM.setVolume(0.5f);
+        GameBGM = Gdx.audio.newMusic(Gdx.files.internal("Sounds/Game_BGM.wav"));
+        GameBGM.setLooping(true);
+        GameBGM.setVolume(0.5f);
 
         initialize();
 

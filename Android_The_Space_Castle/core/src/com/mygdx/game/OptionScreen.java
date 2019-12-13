@@ -78,6 +78,7 @@ public class OptionScreen extends ScreenBeta {
         {
             SpaceCastle.isGame = false;
             SpaceCastle.setActiveScreen(new MainMenu());
+            GameBGM.stop();
         }
         if(SpaceCastle.isGame && !isSetResume)
         {
