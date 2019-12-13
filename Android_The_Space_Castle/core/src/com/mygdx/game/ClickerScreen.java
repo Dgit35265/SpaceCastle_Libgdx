@@ -24,6 +24,7 @@ public class ClickerScreen extends ScreenBeta {
     ImageTextButton Btn1_1;
     ImageTextButton LeaveBtn;
 
+
     //GameData
     int Gold;
 
@@ -60,7 +61,7 @@ public class ClickerScreen extends ScreenBeta {
         LeaveBtn = new ImageTextButton("To Space", uiSkin);
         //Resource list
         ResourceTable = new Table();
-        ResourceTable.setSize(2960, 100);
+        ResourceTable.setSize(WIDTH, 100);
         ResourceTable.setPosition(WIDTH/2 - (ResourceTable.getWidth()/2), HEIGHT - ResourceTable.getHeight());
         ResourceTable.setBackground(new TextureRegionDrawable(new TextureRegion(ListBGTex)));
         ResourceTable.add(GoldImg).maxWidth(100).maxHeight(100);
@@ -69,24 +70,24 @@ public class ClickerScreen extends ScreenBeta {
         ResourceTable.add(CrystalLbl);
         //Clicker Tables
         ClickerTable1 = new Table();
-        ClickerTable1.setSize(1400, 1000);
-        ClickerTable1.setPosition(WIDTH/2 - (ClickerTable1.getWidth()/2), HEIGHT/2 - (ClickerTable1.getHeight()/2));
+        ClickerTable1.setSize(1400, HEIGHT/8);
+        ClickerTable1.setPosition(WIDTH/2 - (ClickerTable1.getWidth()/2), HEIGHT - (ClickerTable1.getHeight()* 3));
         //ClickerTable1.setBackground(new TextureRegionDrawable(new TextureRegion(TableTex)));
         ClickerTable1.add(Btn1_1);
 
         ClickerTable2 = new Table();
-        ClickerTable2.setSize(1400, 1000);
-        ClickerTable2.setPosition(WIDTH/2, HEIGHT/2 - (ClickerTable2.getHeight()/2));
+        ClickerTable2.setSize(1400, HEIGHT/8);
+        ClickerTable2.setPosition(WIDTH/2, HEIGHT - (ClickerTable2.getHeight()* 3));
         ClickerTable2.add(LeaveBtn);
         ClickerTable2.getColor().a = 0;
 
         //Buttons Table
         Btns = new Table();
-        Btns.setSize(2960, 200);
+        Btns.setSize(WIDTH, 200);
         Btns.setPosition(WIDTH/2 - (Btns.getWidth()/2), 0);
-        Btns.add(SwitchBtn).padRight(1000);
-        Btns.add(MoneyBtn);
-        Btns.add(OptBtn).padLeft(1000);
+        Btns.add(SwitchBtn).expandX();
+        Btns.add(MoneyBtn).expandX();
+        Btns.add(OptBtn).expandX();
 
         uiStage.addActor(BGImg);
         uiStage.addActor(ResourceTable);
