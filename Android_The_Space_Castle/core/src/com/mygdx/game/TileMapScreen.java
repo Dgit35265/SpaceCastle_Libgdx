@@ -1,27 +1,25 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.sun.org.apache.regexp.internal.RESyntaxException;
 
 import java.util.LinkedList;
 
 public class TileMapScreen extends ScreenBeta {
 
-    Texture BGTex, GoldTex, CrystalTex, ListBGTex;
-    Image BGImg, GoldImg, CrystalImg;
+    Texture  GoldTex, CrystalTex, OilTex, MetalTex, AmmoTex, InhabitantTex, FoodTex;
+    Image  GoldImg, CrystalImg, OilImage, MetalImage, AmmoImage, InhabitantImg, FoodImg;;
+    Label GoldLbl, CrystalLbl, OilLbl, MetalLbl, AmmoLbl, InhabitantLbl, FoodLbl, TimeLbl;
 
-    Table DPad, ResourceTable, Btns;
+    float DungeonTimer, DungeonTime;
+
+    Table DPad, SquadResourceTable, Btns;
     Button Up, Down, Left, Right;
-    ImageTextButton Btn1, OptBtn;
-    Label GoldLbl, CrystalLbl;
-
+    ImageTextButton BackBtn, OptBtn;
 
     //Colliders
     public LinkedList<Wall> wall;
@@ -35,39 +33,48 @@ public class TileMapScreen extends ScreenBeta {
     boolean isReleased;
     TopdownPlayer player;
 
-
-
-    //GameData
-    int Gold;
-
     @Override
     public void initialize() {
+        DungeonTime = 10;
+        DungeonTimer = DungeonTime;
+
+        GameBGM.play();
         isReleased = true;
         player = new TopdownPlayer();
         player.setPosition(50,50);
 
-        //get gold from game database
-        Gold = 0;
         //Load Textures
-        //BGTex = new Texture("MainMenuBG.jpg");
         GoldTex = new Texture("Gold.png");
         CrystalTex = new Texture("Crystal.png");
-        ListBGTex = new Texture("resourceListBG.png");
+        OilTex = new Texture("Oil_Barrel.png");
+        MetalTex = new Texture("Iron_Metal.png");
+        AmmoTex = new Texture("Ammo.png");
+        InhabitantTex = new Texture("Inhabitant_Icon.png");
+        FoodTex = new Texture("Food_Icon.png");
         //Create Images
-//        BGImg = new Image(BGTex);
         GoldImg = new Image(GoldTex);
         CrystalImg = new Image(CrystalTex);
+        OilImage = new Image(OilTex);
+        MetalImage = new Image(MetalTex);
+        AmmoImage = new Image(AmmoTex);
+        InhabitantImg = new Image(InhabitantTex);
+        FoodImg = new Image(FoodTex);
         //Buttons
         Up = new Button(uiSkin);
         Down = new Button(uiSkin);
         Left = new Button(uiSkin);
         Right = new Button(uiSkin);
-        Btn1 = new ImageTextButton("Get Back to Clicker", uiSkin); //this should be another function
+        BackBtn = new ImageTextButton("Go Back to SpaceCastle(Lose All Food)", uiSkin); //this should be another function
         OptBtn = new ImageTextButton("Option", uiSkin);
         //Labels
-        GoldLbl = new Label("0", uiSkin);
-        GoldLbl.setText(Integer.toString(Gold));
-        CrystalLbl = new Label("0", uiSkin);
+        GoldLbl = new Label(Integer.toString(SpaceCastle.S_Gold), uiSkin);
+        CrystalLbl = new Label(Integer.toString(SpaceCastle.S_Crystal), uiSkin);
+        OilLbl = new Label(Integer.toString(SpaceCastle.S_Oil), uiSkin);
+        MetalLbl = new Label(Integer.toString(SpaceCastle.S_Metal), uiSkin);
+        AmmoLbl = new Label(Integer.toString(SpaceCastle.S_Ammo), uiSkin);
+        InhabitantLbl = new Label(Integer.toString(SpaceCastle.S_Inhabitant), uiSkin);
+        FoodLbl = new Label(Integer.toString(SpaceCastle.S_Food), uiSkin);
+        TimeLbl = new Label("Time Remain: ",uiSkin);
         //D-Pad
         DPad = new Table();
         DPad.setSize( 400, 400);
@@ -79,45 +86,58 @@ public class TileMapScreen extends ScreenBeta {
         DPad.row();
         DPad.add(Down).colspan(2).minWidth(100).minHeight(100).padTop(25);
         //Resource list
-        ResourceTable = new Table();
-        ResourceTable.setSize(2960, 100);
-        ResourceTable.setPosition(WIDTH/2 - (ResourceTable.getWidth()/2), HEIGHT - ResourceTable.getHeight());
-        ResourceTable.setBackground(new TextureRegionDrawable(new TextureRegion(ListBGTex)));
-        ResourceTable.add(GoldImg).maxWidth(100).maxHeight(100);
-        ResourceTable.add(GoldLbl).padRight(400);
-        ResourceTable.add(CrystalImg).maxWidth(100).maxHeight(100);
-        ResourceTable.add(CrystalLbl);
+        SquadResourceTable = new Table();
+        SquadResourceTable.setSize(WIDTH, 100);
+        SquadResourceTable.setPosition(WIDTH/2 - (SquadResourceTable.getWidth()/2), HEIGHT - SquadResourceTable.getHeight());
+        SquadResourceTable.add(GoldImg).maxWidth(100).maxHeight(100).padLeft(100);
+        SquadResourceTable.add(GoldLbl).expandX();
+        SquadResourceTable.add(CrystalImg).maxWidth(100).maxHeight(100);
+        SquadResourceTable.add(CrystalLbl).expandX();
+        SquadResourceTable.add(OilImage).maxWidth(100).maxHeight(100);
+        SquadResourceTable.add(OilLbl).expandX();
+        SquadResourceTable.add(MetalImage).maxWidth(100).maxHeight(100);
+        SquadResourceTable.add(MetalLbl).expandX();
+        SquadResourceTable.add(AmmoImage).maxWidth(100).maxHeight(100);
+        SquadResourceTable.add(AmmoLbl).expandX();
+        SquadResourceTable.add(InhabitantImg).maxWidth(100).maxHeight(100);
+        SquadResourceTable.add(InhabitantLbl).expandX();
+        SquadResourceTable.add(FoodImg).maxWidth(100).maxHeight(100);
+        SquadResourceTable.add(FoodLbl).expandX();
+        SquadResourceTable.add(TimeLbl).expandX();
         //Buttons
         Btns = new Table();
         Btns.setSize(2960, 200);
         Btns.setPosition(WIDTH/2 - (Btns.getWidth()/2), 0);
-        Btns.add(Btn1).padLeft(1000);
+        Btns.add(BackBtn).padLeft(1000);
         Btns.add(OptBtn).padLeft(1000);
 
 
-        //uiStage.addActor(BGImg);
-        //uiStage.addActor(ResourceTable);
+        uiStage.addActor(SquadResourceTable);
         uiStage.addActor(DPad);
         uiStage.addActor(Btns);
-
-
-
-
 
     }
 
     @Override
     public void update(float dt) {
+        //DungeonTimer
+        DungeonTimer -= dt;
+        TimeLbl.setText("Time Remain: " + (int)DungeonTimer);
+        if(DungeonTimer <= 0)
+        {
+            EndDungeon();
+        }
+
         SpaceCastle.TotalTime += dt;
         if(OptBtn.isPressed())
         {
             OptionScreen.isTileMap = true;
             SpaceCastle.setActiveScreen(new OptionScreen());
         }
-        if(Btn1.isPressed())
+        if(BackBtn.isPressed())
         {
             OptionScreen.isTileMap = false;
-            SpaceCastle.setActiveScreen(new ClickerScreen());
+            EndDungeonEarly();
         }
 
         if(Up.isPressed() && isReleased)
@@ -128,5 +148,31 @@ public class TileMapScreen extends ScreenBeta {
             player.moveBy(-150 * dt,0 );
         if(Right.isPressed() && isReleased)
             player.moveBy(150 * dt,0 );
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        GameBGM.stop();
+    }
+
+    public void EndDungeon()
+    {
+        SpaceCastle.Gold += SpaceCastle.S_Gold;
+        SpaceCastle.Crystal += SpaceCastle.S_Crystal;
+        SpaceCastle.Oil += SpaceCastle.S_Oil;
+        SpaceCastle.Metal += SpaceCastle.S_Metal;
+        SpaceCastle.Ammo += SpaceCastle.S_Ammo;
+        SpaceCastle.Inhabitant += SpaceCastle.S_Inhabitant;
+        SpaceCastle.Food += SpaceCastle.S_Food;
+
+        SpaceCastle.setActiveScreen(new ClickerScreen());
+        dispose();
+    }
+
+    public void EndDungeonEarly()
+    {
+        SpaceCastle.S_Food = 0;
+        EndDungeon();
     }
 }
