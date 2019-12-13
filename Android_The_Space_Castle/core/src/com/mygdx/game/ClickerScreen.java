@@ -117,19 +117,19 @@ public class ClickerScreen extends ScreenBeta {
         ResourceTable.setPosition(WIDTH/2 - (ResourceTable.getWidth()/2), HEIGHT - ResourceTable.getHeight());
         ResourceTable.setBackground(new TextureRegionDrawable(new TextureRegion(ListBGTex)));
         ResourceTable.add(GoldImg).maxWidth(100).maxHeight(100);
-        ResourceTable.add(GoldLbl).padLeft(100).padRight(100);
+        ResourceTable.add(GoldLbl).padLeft(20).padRight(20);
         ResourceTable.add(CrystalImg).maxWidth(100).maxHeight(100);
-        ResourceTable.add(CrystalLbl).padLeft(100).padRight(100);
+        ResourceTable.add(CrystalLbl).padLeft(20).padRight(20);
         ResourceTable.add(OilImage).maxWidth(100).maxHeight(100);
-        ResourceTable.add(OilLbl).padLeft(100).padRight(100);
+        ResourceTable.add(OilLbl).padLeft(20).padRight(20);
         ResourceTable.add(MetalImage).maxWidth(100).maxHeight(100);
-        ResourceTable.add(MetalLbl).padLeft(100).padRight(100);
+        ResourceTable.add(MetalLbl).padLeft(20).padRight(20);
         ResourceTable.add(AmmoImage).maxWidth(100).maxHeight(100);
-        ResourceTable.add(AmmoLbl).padLeft(100).padRight(100);
+        ResourceTable.add(AmmoLbl).padLeft(20).padRight(20);
         ResourceTable.add(InhabitantImg).maxWidth(100).maxHeight(100);
-        ResourceTable.add(InhabitantLbl).padLeft(100).padRight(100);
+        ResourceTable.add(InhabitantLbl).padLeft(20).padRight(20);
         ResourceTable.add(FoodImg).maxWidth(100).maxHeight(100);
-        ResourceTable.add(FoodLbl).padLeft(100).padRight(100);
+        ResourceTable.add(FoodLbl).padLeft(20).padRight(20);
         ResourceTable.add(ConsumeBar);
         RefreshResource();
         //Resource Generate Tables

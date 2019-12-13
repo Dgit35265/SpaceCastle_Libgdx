@@ -58,10 +58,10 @@ public class TileMapScreen extends ScreenBeta {
         GoldImg = new Image(GoldTex);
         CrystalImg = new Image(CrystalTex);
         //Buttons
-        Up = new Button(uiSkin);
-        Down = new Button(uiSkin);
-        Left = new Button(uiSkin);
-        Right = new Button(uiSkin);
+        Up = new Button(new TextureRegionDrawable(new Texture("flatDark25.png")));
+        Down = new Button(new TextureRegionDrawable(new Texture("flatDark26.png")));
+        Left = new Button(new TextureRegionDrawable(new Texture("flatDark23.png")));
+        Right = new Button(new TextureRegionDrawable(new Texture("flatDark24.png")));
         Btn1 = new ImageTextButton("Get Back to Clicker", uiSkin); //this should be another function
         OptBtn = new ImageTextButton("Option", uiSkin);
         //Labels
