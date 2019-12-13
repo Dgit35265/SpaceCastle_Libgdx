@@ -63,7 +63,6 @@ public class MainMenu extends ScreenBeta {
         if(StartGameBtn.isPressed())
         {
             SpaceCastle.isGame = true;
-            SpaceCastle.TotalTime = 0;
             SpaceCastle.setActiveScreen(new ClickerScreen());
             dispose();
             //initialize game here
@@ -89,7 +88,7 @@ public class MainMenu extends ScreenBeta {
     @Override
     public void dispose() {
         super.dispose();
+        SpaceCastle.TotalTime = 0;
         MenuBGM.stop();
-        GameBGM.play();
     }
 }

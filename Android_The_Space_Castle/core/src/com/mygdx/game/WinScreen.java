@@ -28,8 +28,8 @@ public class WinScreen extends ScreenBeta {
         Title.setAlignment(Align.center);
         //Label For Content
         Lbl1 = new Label("Resource You Got", uiSkin);
-        Lbl2 = new Label("Gold: " + SpaceCastle.Gold + "Crystal: " + SpaceCastle.Crystal + "Oil: " + SpaceCastle.Oil + "Metal: " + SpaceCastle.Metal
-                + "Ammo: " + SpaceCastle.Ammo + "Inhabitants: " + SpaceCastle.Inhabitant, uiSkin);
+        Lbl2 = new Label("Gold: " + SpaceCastle.Gold + " Crystal: " + SpaceCastle.Crystal + " Oil: " + SpaceCastle.Oil + " Metal: " + SpaceCastle.Metal
+                + " Ammo: " + SpaceCastle.Ammo + " Inhabitants: " + SpaceCastle.Inhabitant, uiSkin);
         Lbl3 = new Label("Total Time Used: " + SpaceCastle.TotalTime, uiSkin);
         //Button
         BackBtn = new ImageTextButton("Back to Menu", uiSkin);
@@ -54,6 +54,7 @@ public class WinScreen extends ScreenBeta {
     public void update(float dt) {
         if(BackBtn.isPressed())
         {
+            SpaceCastle.LoadDifficulty(1);
             SpaceCastle.setActiveScreen(new MainMenu());
         }
     }

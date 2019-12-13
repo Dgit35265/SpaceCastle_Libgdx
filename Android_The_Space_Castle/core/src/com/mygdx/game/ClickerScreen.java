@@ -48,6 +48,7 @@ public class ClickerScreen extends ScreenBeta {
 
     @Override
     public void initialize() {
+        GameBGM.play();
         isReleased = true;
         isTable1 = true;
         CrystalTime = 10.0f;
@@ -268,6 +269,7 @@ public class ClickerScreen extends ScreenBeta {
     @Override
     public void update(float dt) {
         SpaceCastle.TotalTime += dt;
+        Gdx.app.log("TTime", Float.toString(SpaceCastle.TotalTime));
         //Check Win and Lose Condition
         if(SpaceCastle.Inhabitant >= SpaceCastle.WinInhabitants)
         {
@@ -537,6 +539,7 @@ public class ClickerScreen extends ScreenBeta {
     @Override
     public void dispose() {
         super.dispose();
+        GameBGM.stop();
     }
 
     // Generate Resources Functions

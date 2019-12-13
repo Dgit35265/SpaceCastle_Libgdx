@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -16,6 +17,7 @@ public class TileMapScreen extends ScreenBeta {
     Label GoldLbl, CrystalLbl, OilLbl, MetalLbl, AmmoLbl, InhabitantLbl, FoodLbl, TimeLbl;
 
     float DungeonTimer, DungeonTime;
+    float speed, dist, distToEat;
 
     Table DPad, SquadResourceTable, Btns;
     Button Up, Down, Left, Right;
@@ -35,8 +37,10 @@ public class TileMapScreen extends ScreenBeta {
 
     @Override
     public void initialize() {
-        DungeonTime = 10;
+        DungeonTime = 100;
         DungeonTimer = DungeonTime;
+        speed = 150;
+        distToEat = 750;
 
         GameBGM.play();
         isReleased = true;
@@ -120,34 +124,59 @@ public class TileMapScreen extends ScreenBeta {
 
     @Override
     public void update(float dt) {
+        SpaceCastle.TotalTime += dt;
+        Gdx.app.log("TTime", Float.toString(SpaceCastle.TotalTime));
         //DungeonTimer
         DungeonTimer -= dt;
-        TimeLbl.setText("Time Remain: " + (int)DungeonTimer);
-        if(DungeonTimer <= 0)
-        {
+        TimeLbl.setText("Time Remain: " + (int) DungeonTimer);
+        if (DungeonTimer <= 0) {
             EndDungeon();
         }
 
         SpaceCastle.TotalTime += dt;
-        if(OptBtn.isPressed())
-        {
+        if (OptBtn.isPressed()) {
             OptionScreen.isTileMap = true;
             SpaceCastle.setActiveScreen(new OptionScreen());
         }
-        if(BackBtn.isPressed())
-        {
+        if (BackBtn.isPressed()) {
             OptionScreen.isTileMap = false;
             EndDungeonEarly();
         }
 
-        if(Up.isPressed() && isReleased)
-            player.moveBy(0, 150 * dt);
-        if(Down.isPressed() && isReleased)
-            player.moveBy(0, -150 * dt);
+        if (Up.isPressed() && isReleased)
+        {
+            player.moveBy(0, speed * dt);
+            dist += speed * dt;
+        }
+        if (Down.isPressed() && isReleased)
+        {
+            player.moveBy(0, -speed * dt);
+            dist += speed * dt;
+        }
         if(Left.isPressed() && isReleased)
-            player.moveBy(-150 * dt,0 );
+        {
+            player.moveBy(-speed * dt, 0);
+            dist += speed * dt;
+        }
         if(Right.isPressed() && isReleased)
-            player.moveBy(150 * dt,0 );
+        {
+            player.moveBy(speed * dt, 0);
+            dist += speed * dt;
+        }
+
+        Gdx.app.log("Distance", Float.toString(dist));
+        //Consume food base on distance player moved
+        if(dist >= distToEat)
+        {
+            SpaceCastle.S_Food -= 1;
+            RefreshSquadResource();
+            dist = 0;
+        }
+        //Lose All Resource if Not Food Left
+        if(SpaceCastle.S_Food <= 0)
+        {
+            SquadDead();
+        }
     }
 
     @Override
@@ -169,10 +198,31 @@ public class TileMapScreen extends ScreenBeta {
         SpaceCastle.setActiveScreen(new ClickerScreen());
         dispose();
     }
-
     public void EndDungeonEarly()
     {
         SpaceCastle.S_Food = 0;
         EndDungeon();
+    }
+    public void SquadDead()
+    {
+        SpaceCastle.S_Gold = 0;
+        SpaceCastle.S_Crystal = 0;
+        SpaceCastle.S_Oil = 0;
+        SpaceCastle.S_Metal = 0;
+        SpaceCastle.S_Ammo = 0;
+        SpaceCastle.S_Inhabitant = 0;
+        SpaceCastle.S_Food = 0;
+        RefreshSquadResource();
+        EndDungeon();
+    }
+    public void RefreshSquadResource()
+    {
+        GoldLbl.setText(Integer.toString(SpaceCastle.S_Gold));
+        CrystalLbl.setText(Integer.toString(SpaceCastle.S_Crystal));
+        OilLbl.setText(Integer.toString(SpaceCastle.S_Oil));
+        MetalLbl.setText(Integer.toString(SpaceCastle.S_Metal));
+        AmmoLbl.setText(Integer.toString(SpaceCastle.S_Ammo));
+        InhabitantLbl.setText(Integer.toString(SpaceCastle.S_Inhabitant));
+        FoodLbl.setText(Integer.toString(SpaceCastle.S_Food));
     }
 }

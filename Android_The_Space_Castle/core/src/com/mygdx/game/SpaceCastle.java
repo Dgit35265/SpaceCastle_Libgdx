@@ -25,24 +25,7 @@ public class SpaceCastle extends GameBeta {
         super.create();
         LoadDifficulty(1);
 
-        //test, delete later
-        Gold = 50;
-        Crystal = 30;
-        Oil = 15;
-        Metal = 5;
-        Ammo = 50;
-        Inhabitant = 50;
-        Food = 10;
-        AutoFoodNum = 0;
-        //test squad resource
-        S_Gold = 0;
-        S_Crystal = 0;
-        S_Oil = 0;
-        S_Metal = 0;
-        S_Ammo = 0;
-        S_Inhabitant = 0;
-        S_Food = 0;
-
+        TotalTime = 0;
         //Init Win Condition
         WinInhabitants = 2000; //set 2000 for test
 

@@ -63,9 +63,8 @@ public class OptionScreen extends ScreenBeta {
         if(BackBtn.isPressed())
         {
             SpaceCastle.isGame = false;
-            SpaceCastle.TotalTime = 0;
             SpaceCastle.setActiveScreen(new MainMenu());
-            GameBGM.stop();
+            dispose();
         }
         //Choose Difficulty when not in game
         if(!SpaceCastle.isGame) {
@@ -100,5 +99,11 @@ public class OptionScreen extends ScreenBeta {
                 SpaceCastle.setActiveScreen(new TileMapScreen());
             }
         }
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        SpaceCastle.TotalTime = 0;
     }
 }
